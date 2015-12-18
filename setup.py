@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="django-cacheds3storage",
-    version="0.1.1",
+    version="0.1.2",
     author="Anders Pearson",
     author_email="anders@columbia.edu",
     url="https://github.com/ccnmtl/django-cacheds3storage",

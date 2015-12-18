@@ -40,4 +40,4 @@ class CachedS3BotoStorage(S3BotoStorage):
 
 
 CompressorS3BotoStorage = lambda: CachedS3BotoStorage(location='media')
-MediaRootS3BotoStorage = lambda: S3BotoStorage(location='media')
+MediaRootS3BotoStorage = lambda: S3BotoStorage(location='uploads')
