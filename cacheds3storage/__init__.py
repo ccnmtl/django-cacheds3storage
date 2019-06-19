@@ -1,10 +1,10 @@
 from django.core.files.storage import get_storage_class
-from storages.backends.s3boto import S3BotoStorage
+from storages.backends.s3boto3 import S3Boto3Storage
 from django.conf import settings
 from dateutil import tz
 
 
-class CachedS3BotoStorage(S3BotoStorage):
+class CachedS3BotoStorage(S3Boto3Storage):
     def __init__(self, *args, **kwargs):
         super(CachedS3BotoStorage, self).__init__(*args, **kwargs)
         self.local_storage = get_storage_class(
@@ -16,7 +16,7 @@ class CachedS3BotoStorage(S3BotoStorage):
         return name
 
     def modified_time(self, prefixed_path):
-        # S3BotoStorage returns a UTC timestamp (which it gets from S3)
+        # S3Boto3Storage returns a UTC timestamp (which it gets from S3)
         # but an offset-naive one.
         # collectstatic needs to compare that timestamp against
         # a local timestamp (but again an offset-naive one)
@@ -40,4 +40,4 @@ class CachedS3BotoStorage(S3BotoStorage):
 
 
 CompressorS3BotoStorage = lambda: CachedS3BotoStorage(location='media')
-MediaRootS3BotoStorage = lambda: S3BotoStorage(location='uploads')
+MediaRootS3BotoStorage = lambda: S3Boto3Storage(location='uploads')

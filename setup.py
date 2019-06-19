@@ -2,14 +2,16 @@ from setuptools import setup
 
 setup(
     name="django-cacheds3storage",
-    version="0.1.2",
+    version="0.2.0",
     author="Anders Pearson",
-    author_email="ccnmtl-dev@columbia.edu",
+    author_email="ctl-dev@columbia.edu",
     url="https://github.com/ccnmtl/django-cacheds3storage",
     description="S3 cached storage",
     long_description="s3 cached storage",
     install_requires=[
+        "django-storages",
         "python-dateutil",
+        "boto3",
         ],
     scripts=[],
     license="BSD",
