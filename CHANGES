@@ -1,6 +1,9 @@
+0.2.2
+==================
+* Update the seek of closed file fix to work with django-storages 1.9.x.
+
 0.2.1 (2019-06-20)
 ==================
-
 * Add boto3 file seek fix
 
 0.2.0 (2019-06-19)
