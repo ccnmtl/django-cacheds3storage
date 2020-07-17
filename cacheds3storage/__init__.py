@@ -38,8 +38,9 @@ class CachedS3BotoStorage(S3Boto3Storage):
                 name, content_autoclose)
 
     def save(self, name, content):
-        name = super(CachedS3BotoStorage, self).save(name, content)
         self.local_storage._save(name, content)
+        super(CachedS3BotoStorage, self).save(
+            name, self.local_storage._open(name))
         return name
 
     def modified_time(self, prefixed_path):

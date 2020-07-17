@@ -1,3 +1,7 @@
+0.2.3
+==================
+* Update save() override for CachedS3BotoStorage.
+
 0.2.2 (2020-07-16)
 ==================
 * Update the seek of closed file fix to work with django-storages 1.9.x.
