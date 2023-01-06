@@ -16,7 +16,6 @@ setup(
     scripts=[],
     license="BSD",
     platforms=["any"],
-    zip_safe=False,
     packages=['cacheds3storage'],
     include_package_data=True,
     )
