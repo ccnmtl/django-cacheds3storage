@@ -1,4 +1,4 @@
-0.3.0
+0.3.0 (2023-02-23)
 ==================
 * Remove django-compressor local_storage
 
